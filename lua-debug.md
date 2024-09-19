@@ -98,3 +98,41 @@ end
 ```
 
 Lua will try to convert the string to a number before performing the comparison. If `b` was something that doesn't represent a number, like `"five"`, then the comparison would result in `false`.
+
+To remove the last item from a Lua table, you can use the `table.remove` function. Here's an example:
+
+```lua
+local myTable = {1, 2, 3, 4, 5}
+
+-- Remove the last item from the table
+table.remove(myTable)
+
+-- Print the updated table
+for i, value in ipairs(myTable) do
+    print(i, value)
+end
+```
+
+In this example, we have a table `myTable` containing several elements. By calling `table.remove(myTable)`, the last item in the table is removed. The updated table is then printed using a loop to show the remaining elements.
+
+Keep in mind that `table.remove` modifies the table in-place by shifting the elements after the removed item. If you need to preserve the original table or the value of the removed item, you may want to store it in a separate variable before removing it. For example:
+
+```lua
+local myTable = {1, 2, 3, 4, 5}
+
+-- Store the last item in a separate variable
+local lastItem = myTable[#myTable]
+
+-- Remove the last item from the table
+table.remove(myTable)
+
+-- Print the updated table
+for i, value in ipairs(myTable) do
+    print(i, value)
+end
+
+-- Print the removed item
+print("Removed item:", lastItem)
+```
+
+In this updated example, the last item in `myTable` is stored in the variable `lastItem` before removing it. This allows you to access the value of the removed item separately from the modified table.
