@@ -71,3 +71,30 @@ local combinedTable = combineTables(table1, table2)
 
 -- Now, table1 and table2 remain unchanged, and combinedTable = {1, 2, 3, 4, 5, 6}
 ```
+
+In Lua, when you compare a number to a string, Lua tries to convert the string to a number before performing the comparison. This means that the comparison can work, but it can also lead to unexpected results if the string doesn't represent a valid number.
+
+Here's an example of comparing an integer with a string in Lua:
+
+```lua
+local a = 5
+local b = "5"
+
+if a == tonumber(b) then
+  print("a is equal to b")
+else
+  print("a is not equal to b")
+end
+```
+
+Here I'm explicitly using `tonumber(b)` to convert the string `b` to a number before performing the comparison, but you could also directly compare them:
+
+```lua
+if a == b then
+  print("a is equal to b")
+else
+  print("a is not equal to b")
+end
+```
+
+Lua will try to convert the string to a number before performing the comparison. If `b` was something that doesn't represent a number, like `"five"`, then the comparison would result in `false`.
