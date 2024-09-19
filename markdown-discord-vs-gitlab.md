@@ -135,3 +135,59 @@ $$
 ```
 
 These features make GitLab's Markdown a powerful tool for documentation, project tracking, and enhancing communication within a team.
+
+In GitLab Flavored Markdown, you can use a wide range of emojis, similar to those used in GitHub. These icons are part of the standard emoji set that can be included in markdown files, comments, and other text fields within GitLab by using the corresponding emoji shortcode, which is typically wrapped in colons.
+
+### More Commonly Used Icons in GitLab Markdown:
+- **Check Mark (`:white_check_mark:`)** - Used to indicate completion or approval.
+- **X Mark (`:x:`)** - Indicates something is incorrect or to be removed.
+- **Thumbs Up (`:thumbsup:`)** - Shows approval or agreement.
+- **Thumbs Down (`:thumbsdown:`)** - Shows disapproval or disagreement.
+- **Exclamation (`:exclamation:`)** - Used to highlight caution or important points.
+
+### Adding Custom Emojis:
+If you find the available emojis insufficient, GitLab allows you to add custom emojis to your instance. Here’s how you can do it:
+
+1. **Upload Custom Emoji:**
+   - Go to the admin area (you need admin rights).
+   - Under the **Custom Emoji** section, you can upload new emojis.
+   - Provide a name for the emoji which will be used as the shortcode wrapped in colons.
+
+2. **Use in Markdown:**
+   - Once uploaded, these custom emojis can be used anywhere in your markdown by typing `:your_custom_emoji_name:`.
+
+Adding custom emojis allows for a more personalized and expressive way of communicating within your projects and documentation in GitLab.
+
+Certainly! Here’s a more extensive list of commonly used emojis in GitLab Flavored Markdown, which you can use to enhance communication and documentation:
+
+### General Emojis
+- **Heart (`:heart:`)** - Express affection or emphasize liking something.
+- **Fire (`:fire:`)** - Denote something as exciting, excellent, or intense.
+- **Star (`:star:`)** - Highlight standout items or star features.
+- **Clap (`:clap:`)** - Show applause or congratulations.
+- **Eyes (`:eyes:`)** - Indicate something needs attention or scrutiny.
+
+### Task and Status Related
+- **Checkered Flag (`:checkered_flag:`)** - Mark completion or end of a process.
+- **Rocket (`:rocket:`)** - Use for launches or fast developments.
+- **Construction (`:construction:`)** - Show that something is under construction or in development.
+- **Lock (`:lock:`)** - Indicate something is secure or access is restricted.
+- **Alarm Clock (`:alarm_clock:`)** - Note deadlines or important times.
+
+### Emotion and Feedback
+- **Smile (`:smile:`)** - Express happiness or satisfaction.
+- **Sad (`:sad:`)** - Show disappointment or sadness.
+- **Angry (`:angry:`)** - Express frustration or anger.
+- **Confused (`:confused:`)** - Indicate puzzlement or a need for clarification.
+
+### Symbols and Signs
+- **Plus (`:heavy_plus_sign:`)** - Suggest addition or inclusion.
+- **Minus (`:heavy_minus_sign:`)** - Suggest deletion or exclusion.
+- **Infinity (`:infinity:`)** - Denote limitless possibilities or ongoing processes.
+
+### Fun and Miscellaneous
+- **Party Popper (`:tada:`)** - Celebrate achievements or milestones.
+- **Pizza (`:pizza:`)** - Often used humorously to suggest team lunches or rewards.
+- **Ghost (`:ghost:`)** - For fun or to denote hidden features or easter eggs in discussions.
+
+These emojis add visual interest and can convey emotions or statuses quickly, making communication more engaging and effective in GitLab.
