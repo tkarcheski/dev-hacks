@@ -1,0 +1,544 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: advanced-chat
+  name: Einstein Assistant [[OpenAI>Phi>LLAMA>Qwen]]
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.5
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        sourceType: start
+        targetType: llm
+      id: 1735782073575-llm
+      source: '1735782073575'
+      sourceHandle: source
+      target: llm
+      targetHandle: target
+      type: custom
+    - data:
+        sourceType: llm
+        targetType: answer
+      id: llm-answer
+      source: llm
+      sourceHandle: source
+      target: answer
+      targetHandle: target
+      type: custom
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: llm
+      id: answer-source-1735782643445-target
+      source: answer
+      sourceHandle: source
+      target: '1735782643445'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 1735782643445-source-1735782729924-target
+      source: '1735782643445'
+      sourceHandle: source
+      target: '1735782729924'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: llm
+      id: 1735782729924-source-1735783042426-target
+      source: '1735782729924'
+      sourceHandle: source
+      target: '1735783042426'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 1735783042426-source-1735783227272-target
+      source: '1735783042426'
+      sourceHandle: source
+      target: '1735783227272'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: llm
+      id: 1735783227272-source-1735783265800-target
+      source: '1735783227272'
+      sourceHandle: source
+      target: '1735783265800'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 1735783265800-source-1735783426443-target
+      source: '1735783265800'
+      sourceHandle: source
+      target: '1735783426443'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: answer
+        targetType: llm
+      id: 1735783426443-source-1735785414797-target
+      source: '1735783426443'
+      sourceHandle: source
+      target: '1735785414797'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: answer
+      id: 1735785414797-source-1735784307441-target
+      source: '1735785414797'
+      sourceHandle: source
+      target: '1735784307441'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: Start
+        type: start
+        variables: []
+      height: 54
+      id: '1735782073575'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        memory:
+          query_prompt_template: 'You are an enhancement node with limited GPU resources.
+            Prioritize lightweight processing and optimize efficiency. Process the
+            following prompt with basic improvements:
+
+            {{#sys.query#}}
+
+            '
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: false
+            size: 10
+        model:
+          completion_params:
+            frequency_penalty: 0.1
+            presence_penalty: 0.1
+            temperature: 0.9
+            top_p: 0.9
+          mode: chat
+          name: gpt-4o-mini
+          provider: openai
+        prompt_template:
+        - id: 9ebc45cf-27c6-4656-bf98-8c475f1b220d
+          role: system
+          text: "You are an openai llm based on gpt-4o mini. You will be creative\
+            \ and begin understand the users request. \n\n/"
+        selected: false
+        title: Stage 0 - openai - 4o-mini
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: llm
+      position:
+        x: 380
+        y: 282
+      positionAbsolute:
+        x: 380
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '
+
+          **Stage 0/OpenAI/4o-mini:**
+
+          {{#llm.text#}}
+
+          '
+        desc: ''
+        selected: false
+        title: Stage 0 - Text
+        type: answer
+        variables: []
+      height: 118
+      id: answer
+      position:
+        x: 679.9999999466975
+        y: 282
+      positionAbsolute:
+        x: 679.9999999466975
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.9
+          mode: chat
+          name: phi3:3.8b
+          provider: ollama
+        prompt_template:
+        - id: 1478b625-500e-44cc-a5f4-469cd949543c
+          role: system
+          text: 'You are an enhancement node with limited GPU resources. Prioritize
+            lightweight processing and optimize efficiency. '
+        - id: f0466e3d-05e1-4cd6-b3cd-194988bf6f8f
+          role: user
+          text: "Process the following prompt with basic improvements:\n\n{{#sys.query#}}\n\
+            \nEnhance this OpenAI prompt for lightweight models: \n\n{{#llm.text#}}"
+        retry_config:
+          max_retries: 10
+          retry_enabled: true
+          retry_interval: 5000
+        selected: false
+        title: Stage 1 - einstein - phi3-small
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 124
+      id: '1735782643445'
+      position:
+        x: 980.2202370102232
+        y: 282
+      positionAbsolute:
+        x: 980.2202370102232
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '
+
+
+          **[[Stage 1/Einstein/phi3-mini]]**
+
+
+          {{#1735782643445.text#}}'
+        desc: ''
+        selected: false
+        title: Stage 1 - Text
+        type: answer
+        variables: []
+      height: 118
+      id: '1735782729924'
+      position:
+        x: 1284.2202370102234
+        y: 282
+      positionAbsolute:
+        x: 1284.2202370102234
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: phi3:14b
+          provider: ollama
+        prompt_template:
+        - id: 6fab0a52-a75c-41c0-8351-2e57c54c4c7e
+          role: system
+          text: 'You are a mid-tier enhancement node. Refine prompts for moderately
+            complex models, balancing quality and performance. '
+        - id: 169eb6dd-c156-476a-ba30-f245d4c85e66
+          role: user
+          text: 'Our AI assistant suggests the following enhancements:
+
+            {{#1735782643445.text#}}
+
+
+
+            Apply enhancements to the following request:
+
+            {{#sys.query#}}
+
+
+            '
+        retry_config:
+          max_retries: 10
+          retry_enabled: true
+          retry_interval: 5000
+        selected: false
+        title: Stage 2 - Engineer
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 124
+      id: '1735783042426'
+      position:
+        x: 1588.2202370102234
+        y: 282
+      positionAbsolute:
+        x: 1588.2202370102234
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '
+
+
+          **[[Stage 2/mini1/phi3-medium]]**
+
+
+          {{#1735783042426.text#}}'
+        desc: ''
+        selected: false
+        title: Stage 3 - Text
+        type: answer
+        variables: []
+      height: 118
+      id: '1735783227272'
+      position:
+        x: 1889.7003950525739
+        y: 282
+      positionAbsolute:
+        x: 1889.7003950525739
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: llama3.3:70b-instruct-q4_K_S
+          provider: ollama
+        prompt_template:
+        - id: c649595d-34d1-44d1-9108-15e2805b8571
+          role: system
+          text: 'You are an advanced node designed for complex solution review. Utilize
+            your memory and CPU to generate comprehensive review of the following.
+
+
+            '
+        - id: e149debb-fd0c-4a80-af44-33d2000a89ba
+          role: user
+          text: "The AI system has created the following solution:\n{{#1735783042426.text#}}\n\
+            \nReview this solution for accuracy. Fill in missing details. \n\nSummarize\
+            \ the solution in markdown format.\n\n"
+        retry_config:
+          max_retries: 10
+          retry_enabled: true
+          retry_interval: 5000
+        selected: false
+        title: Stage 3 - Reviewer
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 124
+      id: '1735783265800'
+      position:
+        x: 2196.220237010223
+        y: 282
+      positionAbsolute:
+        x: 2196.220237010223
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '
+
+
+          **[[Stage 3/mini2/llama-70b]]**
+
+          {{#1735783265800.text#}}
+
+          '
+        desc: ''
+        selected: false
+        title: Stage 4 - Review
+        type: answer
+        variables: []
+      height: 118
+      id: '1735783426443'
+      position:
+        x: 2500.220237010223
+        y: 282
+      positionAbsolute:
+        x: 2500.220237010223
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        answer: '{{#1735785414797.text#}}'
+        desc: ''
+        selected: false
+        title: Final Answer
+        type: answer
+        variables: []
+      height: 102
+      id: '1735784307441'
+      position:
+        x: 3110.5198419043463
+        y: 282
+      positionAbsolute:
+        x: 3110.5198419043463
+        y: 282
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.2
+          mode: chat
+          name: qwen:110b
+          provider: ollama
+        prompt_template:
+        - id: 897f2f67-6799-4595-89c3-dd0fba62ed77
+          role: system
+          text: You are an advanced node designed for complex solution review. Utilize
+            your memory and CPU to generate comprehensive review of the following.
+        - id: b8617044-dcc7-4b36-ab4c-627af44624af
+          role: user
+          text: '{{#1735783265800.text#}}'
+        selected: false
+        title: stage 4 - dev 1 - qwen:110b
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1735785414797'
+      position:
+        x: 2802.9603160313986
+        y: 282
+      positionAbsolute:
+        x: 2802.9603160313986
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 149.9253872369543
+      y: 30.618641243336242
+      zoom: 0.7937005707555271
